@@ -87,7 +87,7 @@ Handle<Value> Zipper::addFile(const Arguments& args)
 
     if (args.Length() < 3)
         return ThrowException(Exception::TypeError(
-          String::New("requires two arguments, the path of a file and a callback")));
+          String::New("requires three arguments, the path of a file, a filename and a callback")));
     
     // first arg must be path
     if(!args[0]->IsString())
