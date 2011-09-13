@@ -13,7 +13,7 @@
    ],
   "author"        : "Ruben Vermeersch <ruben@savanne.be>",
   "contributors"  : [],
-  "licenses"      : ["MIT X11"],
+  "licenses"      : ["BSD"],
   "dependencies"  : [],
    "directories"  : {
        "examples" : "examples",
