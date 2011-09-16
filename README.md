@@ -4,7 +4,8 @@
 
     zipper = require('zipper').Zipper;
 
-    zipper.addFile('myfile.txt', '/path/to/myfile.txt', function (err) {
+    var zipfile = new zipper('/path/to/my/zipfile.zip');
+    zipfile.addFile('myfile.txt', '/path/to/myfile.txt', function (err) {
         if (err) throw err;
         // Do stuff
     });
