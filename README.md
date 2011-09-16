@@ -10,6 +10,8 @@
         // Do stuff
     });
 
+  The zip file will be created if it does not exist already.
+
 ## Installation
 
   You can install the latest tag via npm:
