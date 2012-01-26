@@ -1,6 +1,6 @@
 {
   "name"          : "zipper",
-  "version"       : "0.1.0",
+  "version"       : "0.1.1",
   "main"          : "./lib/index.js",
   "description"   : "Insanely simple zipfile creator for node.js",
   "keywords"      : ["zip", "compress", "archive", "libzip"],
@@ -13,7 +13,12 @@
   ],
   "author"        : "Ruben Vermeersch <ruben@savanne.be>",
   "contributors"  : [],
-  "licenses"      : ["BSD"],
+  "licenses"      : [
+        {
+            "type"  : "BSD",
+            "url"   : "https://raw.github.com/rubenv/zipper/master/LICENSE.txt"
+        }
+  ],
   "dependencies"  : [],
   "directories"   : {
        "examples" : "examples",

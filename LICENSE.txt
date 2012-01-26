@@ -1,4 +1,4 @@
-Copyright (C) 2011 by Ruben Vermeersch
+Copyright (C) 2012 by Ruben Vermeersch
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
