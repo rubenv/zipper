@@ -1,5 +1,7 @@
   Insanely simple zipfile creator for node.js.
 
+  Developed by Flow Pilots: http://www.flowpilots.com/
+
 # Usage
 
     zipper = require('zipper').Zipper;
