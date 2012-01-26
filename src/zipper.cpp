@@ -137,7 +137,7 @@ Handle<Value> Zipper::addFile(const Arguments& args)
 }
 
 
-int Zipper::EIO_AddFile(eio_req *req)
+void Zipper::EIO_AddFile(eio_req *req)
 {
     closure_t *closure = static_cast<closure_t *>(req->data);
 
@@ -156,8 +156,6 @@ int Zipper::EIO_AddFile(eio_req *req)
         closure->error = true;
         closure->error_name = s.str();
     }
-
-    return 0;
 }
 
 

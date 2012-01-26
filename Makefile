@@ -13,4 +13,4 @@ uninstall:
 	node-waf -v uninstall
 
 test:
-	node test.js
+	node examples/test.js

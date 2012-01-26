@@ -1,27 +1,27 @@
 {
   "name"          : "zipper",
-  "version"       : "0.0.2",
+  "version"       : "0.1.0",
   "main"          : "./lib/index.js",
   "description"   : "Insanely simple zipfile creator for node.js",
   "keywords"      : ["zip", "compress", "archive", "libzip"],
   "url"           : "http://github.com/rubenv/zipper",
-   "repositories" : [
+  "repositories"  : [
        {
            "type" : "git",
            "url"  : "git://github.com/rubenv/zipper.git" 
        } 
-   ],
+  ],
   "author"        : "Ruben Vermeersch <ruben@savanne.be>",
   "contributors"  : [],
   "licenses"      : ["BSD"],
   "dependencies"  : [],
-   "directories"  : {
+  "directories"   : {
        "examples" : "examples",
-       "src": "src"
+       "src"      : "src"
    },
-  "engines"       : { "node": ">=0.4.0 <0.5" },
+  "engines"       : { "node": ">=0.6.0 <0.7" },
   "scripts"       : {
-      "install" : "node-waf configure build",
-      "test"    : "make test"
+      "install"   : "node-waf configure build",
+      "test"      : "make test"
    }
 }
