@@ -12,7 +12,20 @@
         // Do stuff
     });
 
-  The zip file will be created if it does not exist already.
+### Or to add Multiple files in one call
+
+    var files = {
+      'path/to/file/spo.txt':'name_in_zip.txt',
+      'path/to/file/car.txt':'name_in_zip/car.txt'
+    }
+
+    zipfiles.addFile(files, function (err) {
+        if (err) throw err;
+        // Do stuff
+    });
+
+
+  The zip file will be created if it does not exist already. If the file already exists in the zip a warning will be throwen and call will fail.
 
 ## Installation
 
