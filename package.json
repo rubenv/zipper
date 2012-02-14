@@ -19,7 +19,7 @@
             "url"   : "https://raw.github.com/rubenv/zipper/master/LICENSE.txt"
         }
   ],
-  "dependencies"  : [],
+  "dependencies"  : {"async" : "~0.1.0"},
   "directories"   : {
        "examples" : "examples",
        "src"      : "src"
