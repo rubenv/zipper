@@ -131,7 +131,6 @@ Handle<Value> Zipper::addFile(const Arguments& args)
     closure->name = name;
     closure->cb = Persistent<Function>::New(Handle<Function>::Cast(args[args.Length()-1]));
     eio_custom(EIO_AddFile, EIO_PRI_DEFAULT, EIO_AfterAddFile, closure);
-    ev_ref(EV_DEFAULT_UC);
     zf->Ref();
     return Undefined();
 }
@@ -164,7 +163,6 @@ int Zipper::EIO_AfterAddFile(eio_req *req)
     HandleScope scope;
 
     closure_t *closure = static_cast<closure_t *>(req->data);
-    ev_unref(EV_DEFAULT_UC);
 
     TryCatch try_catch;
   
