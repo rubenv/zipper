@@ -1,5 +1,7 @@
   Insanely simple zipfile creator for node.js.
 
+  [![Build Status](https://travis-ci.org/rubenv/zipper.png?branch=master)](https://travis-ci.org/rubenv/zipper)
+
   Developed by Flow Pilots: http://www.flowpilots.com/
 
 # Usage
