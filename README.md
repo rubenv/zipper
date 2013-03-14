@@ -22,11 +22,6 @@
   
     $ npm install zipper
 
-## TODO
-
-  Integrate back into node-zipfile. This was not done in the first place as we
-  needed a fix fast.
-
 ## Credits
 
   Inspired by node-zipfile (written by Dane Springmeyer).
