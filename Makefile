@@ -11,6 +11,3 @@ clean:
 
 uninstall:
 	node-waf -v uninstall
-
-test:
-	node examples/test.js

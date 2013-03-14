@@ -34,7 +34,7 @@
   },
   "scripts": {
     "install": "node-waf configure build",
-    "test": "make test"
+    "test": "grunt test"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
