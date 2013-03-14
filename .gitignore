@@ -6,3 +6,5 @@ build
 *.a
 lib/_zipper.node
 deps/libzip-*/
+tmp
+node_modules
