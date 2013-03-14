@@ -14,6 +14,7 @@
             ],
             "libraries": [
                 "-lz",
+                "-lm",
                 "-lzip",
                 "-L../deps/libzip-<(libzip)/lib/.libs/"
             ]
