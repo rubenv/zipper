@@ -21,14 +21,6 @@
   You can install the latest tag via npm:
   
     $ npm install zipper
-  
-  Or install from github master:
-  
-    $ git clone git://github.com/rubenv/zipper.git
-    $ cd zipper
-    $ ./configure
-    $ make
-    $ make install
 
 ## TODO
 
