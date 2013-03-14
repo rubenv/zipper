@@ -13,4 +13,4 @@ deps/libzip-$(LIBZIP): deps/libzip-$(LIBZIP).tar.bz2
 	./deps/build-libzip.sh $(LIBZIP)
 
 clean:
-	-rm -rf build
+	-rm -rf build deps/libzip-*/
