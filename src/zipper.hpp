@@ -26,8 +26,8 @@ class Zipper: public node::ObjectWrap {
     
     // Async
     static Handle<Value> addFile(const Arguments& args);
-    static void EIO_AddFile(eio_req *req);
-    static int EIO_AfterAddFile(eio_req *req);
+    static void _AddFile(uv_work_t *req);
+    static void _AfterAddFile(uv_work_t *req);
     
     Zipper(std::string const& file_name);
 

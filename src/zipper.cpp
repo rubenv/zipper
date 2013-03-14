@@ -108,7 +108,9 @@ Handle<Value> Zipper::addFile(const Arguments& args)
     std::string name = TOSTR(args[1]);
   
     Zipper* zf = ObjectWrap::Unwrap<Zipper>(args.This());
+    zf->Ref();
 
+    uv_work_t *req = new uv_work_t();
     closure_t *closure = new closure_t();
 
     // libzip is not threadsafe so we cannot use the zf->archive_
@@ -130,13 +132,14 @@ Handle<Value> Zipper::addFile(const Arguments& args)
     closure->path = path;
     closure->name = name;
     closure->cb = Persistent<Function>::New(Handle<Function>::Cast(args[args.Length()-1]));
-    eio_custom(EIO_AddFile, EIO_PRI_DEFAULT, EIO_AfterAddFile, closure);
-    zf->Ref();
+    req->data = closure;
+
+    uv_queue_work(uv_default_loop(), req, _AddFile, _AfterAddFile);
     return Undefined();
 }
 
 
-void Zipper::EIO_AddFile(eio_req *req)
+void Zipper::_AddFile(uv_work_t *req)
 {
     closure_t *closure = static_cast<closure_t *>(req->data);
 
@@ -158,7 +161,7 @@ void Zipper::EIO_AddFile(eio_req *req)
 }
 
 
-int Zipper::EIO_AfterAddFile(eio_req *req)
+void Zipper::_AfterAddFile(uv_work_t *req)
 {
     HandleScope scope;
 
@@ -173,14 +176,14 @@ int Zipper::EIO_AfterAddFile(eio_req *req)
         Local<Value> argv[1] = { Local<Value>::New(Null()) };
         closure->cb->Call(Context::GetCurrent()->Global(), 1, argv);
     }
+    
+    closure->zf->Unref();
+    closure->cb.Dispose();
+    delete closure;
+    delete req;
 
     if (try_catch.HasCaught()) {
       FatalException(try_catch);
       //try_catch.ReThrow();
     }
-    
-    closure->zf->Unref();
-    closure->cb.Dispose();
-    delete closure;
-    return 0;
 }

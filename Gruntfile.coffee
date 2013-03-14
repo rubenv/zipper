@@ -22,7 +22,7 @@ module.exports = (grunt) ->
 
         watch:
             all:
-                files: ['src/*', 'lib/*.js', 'test/**.coffee']
+                files: ['src/*', 'lib/*.js', 'test/**.coffee', 'Gruntfile.coffee']
                 tasks: ['test']
 
         mochacli:
@@ -33,7 +33,17 @@ module.exports = (grunt) ->
                 options:
                     reporter: 'spec'
 
+    @registerTask "make", "Run make", ->
+        done = @async()
+
+        grunt.util.spawn
+            cmd: "make"
+        , (error, result, code) ->
+            grunt.log.writeln(result.stderr) if result.stderr
+            grunt.log.writeln(result.stdout) if result.stdout
+            done(!error)
+
     @registerTask 'default', ['test']
-    @registerTask 'build', ['clean', 'jshint']
+    @registerTask 'build', ['clean', 'jshint', 'make']
     @registerTask 'package', ['build', 'release']
     @registerTask 'test', ['build', 'mkdir', 'mochacli']
