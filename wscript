@@ -42,7 +42,7 @@ def configure_libzip():
         Utils.pprint('GREEN','configuring internal libzip dep')
         os.chdir('deps')
         if not os.path.exists(BUNDLED_LIBZIP):
-            os.system('tar xvf %s' % BUNDLED_LIBZIP_TAR)
+            os.system('tar xf %s' % BUNDLED_LIBZIP_TAR)
         os.chdir(BUNDLED_LIBZIP)
         cxxflags = ''
         if os.environ.has_key('CFLAGS'):
