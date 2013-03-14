@@ -2,9 +2,19 @@
     "targets": [
         {
             "target_name": "zipper",
-            "sources": ["src/_zipper.cc"],
+            "variables": {
+                "libzip%": "0.10"
+            },
+            "sources": [
+                "src/_zipper.cc",
+                "src/zipper.cpp"
+            ],
             "include_dirs": [
-                "deps/libzip-0.10/lib/"
+                "deps/libzip-<(libzip)/lib/"
+            ],
+            "libraries": [
+                "-lzip",
+                "-L../deps/libzip-<(libzip)/lib/.libs/"
             ]
         }
     ]

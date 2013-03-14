@@ -29,5 +29,5 @@ extern "C" {
 
   }
 
-  NODE_MODULE(_zipper, init);
+  NODE_MODULE(zipper, init);
 }

@@ -10,7 +10,7 @@ build/Makefile: binding.gyp
 
 deps/libzip-$(LIBZIP): deps/libzip-$(LIBZIP).tar.bz2
 	tar xpf $< -C deps
+	./deps/build-libzip.sh $(LIBZIP)
 
 clean:
 	-rm -rf build
-	-rm lib/_zipper.node
