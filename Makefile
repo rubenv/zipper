@@ -1,5 +1,7 @@
 LIBZIP=0.10
 
+.PHONY:all
+
 all: lib/_zipper.node
 
 lib/_zipper.node: deps/libzip-$(LIBZIP) build/Makefile
