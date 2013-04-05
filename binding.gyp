@@ -13,8 +13,8 @@
                 "deps/libzip-<(libzip)/lib/"
             ],
             "libraries": [
-                "-lz",
                 "-lm",
+                "-lz",
                 "-lzip",
                 "-L../deps/libzip-<(libzip)/lib/.libs/"
             ]
