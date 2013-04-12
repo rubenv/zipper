@@ -1,13 +1,18 @@
-all: zipper.node
+LIBZIP=0.10
 
-install:
-	node-waf -v build install
+.PHONY:all
 
-zipper.node:
-	node-waf -v build
+all: lib/_zipper.node
+
+lib/_zipper.node: deps/libzip-$(LIBZIP) build/Makefile
+	node-gyp build
+
+build/Makefile: binding.gyp
+	node-gyp configure
+
+deps/libzip-$(LIBZIP): deps/libzip-$(LIBZIP).tar.bz2
+	tar xpf $< -C deps
+	./deps/build-libzip.sh $(LIBZIP)
 
 clean:
-	node-waf -v clean distclean
-
-uninstall:
-	node-waf -v uninstall
+	-rm -rf build deps/libzip-*/

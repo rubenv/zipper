@@ -22,7 +22,7 @@ module.exports = (grunt) ->
 
         watch:
             all:
-                files: ['src/*', 'lib/*.js', 'test/**.coffee', 'Gruntfile.coffee']
+                files: ['src/*', 'lib/*.js', 'test/**.coffee', 'Gruntfile.coffee', 'Makefile', 'binding.gyp']
                 tasks: ['test']
 
         mochacli:

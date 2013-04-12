@@ -134,7 +134,7 @@ Handle<Value> Zipper::addFile(const Arguments& args)
     closure->cb = Persistent<Function>::New(Handle<Function>::Cast(args[args.Length()-1]));
     req->data = closure;
 
-    uv_queue_work(uv_default_loop(), req, _AddFile, _AfterAddFile);
+    uv_queue_work(uv_default_loop(), req, _AddFile, (uv_after_work_cb)_AfterAddFile);
     return Undefined();
 }
 
