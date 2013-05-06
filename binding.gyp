@@ -20,6 +20,12 @@
                         "-L../deps/libzip-<(libzip)/lib/.libs/",
                         "-lzip"
                     ],
+                } ],
+                [ 'OS=="linux"', {
+                    "libraries": [
+                        "-lz",
+                        "-lzip"
+                    ],
                 } ]
             ]
         }
