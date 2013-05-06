@@ -10,13 +10,17 @@
                 "src/_zipper.cc",
                 "src/zipper.cpp"
             ],
-            "include_dirs": [
-                "deps/libzip-<(libzip)/lib/"
-            ],
-            "libraries": [
-                "-lz",
-                "-L../deps/libzip-<(libzip)/lib/.libs/",
-                "-lzip"
+            "conditions": [
+                [ 'OS=="mac"', {
+                    "include_dirs": [
+                        "deps/libzip-<(libzip)/lib/"
+                    ],
+                    "libraries": [
+                        "-lz",
+                        "-L../deps/libzip-<(libzip)/lib/.libs/",
+                        "-lzip"
+                    ],
+                } ]
             ]
         }
     ]
