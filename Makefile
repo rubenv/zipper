@@ -18,8 +18,12 @@ deps/libzip-$(LIBZIP): deps/libzip-$(LIBZIP).tar.bz2
 endif
 
 ifeq ($(shell uname), Linux)
-lib/_zipper.node: build/Makefile
+lib/_zipper.node: build/Makefile /usr/include/zip.h
 	node-gyp build
+
+/usr/include/zip.h:
+	@echo "No zip headers, install libzip-devel (Fedora etc.) or libzip-dev (Ubuntu etc.)."
+	@exit 1
 endif
 
 clean:
