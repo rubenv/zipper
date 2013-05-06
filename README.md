@@ -1,5 +1,7 @@
   Insanely simple zipfile creator for node.js.
 
+  [![Build Status](https://travis-ci.org/rubenv/zipper.png?branch=master)](https://travis-ci.org/rubenv/zipper)
+
   Developed by Flow Pilots: http://www.flowpilots.com/
 
 # Usage
@@ -19,6 +21,9 @@
   You can install the latest tag via npm:
   
     $ npm install zipper
+
+  Be sure to install `libzip-devel` (Fedora etc.) or `libzip-dev` (Ubuntu etc.)
+  before installing on Linux.
 
 ## Credits
 
